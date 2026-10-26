@@ -48,9 +48,7 @@ services:
     container_name: quoc2_nginx-container
     image: nginx:latest
     ports:
-      - "80:80"
       - "8086:80"
-      - "443:443"
       - "8446:443"
     restart: always
     volumes:
