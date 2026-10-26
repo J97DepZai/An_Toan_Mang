@@ -39,16 +39,18 @@ services:
     depends_on:
       - jobportal2-backend
     environment:
-      - REACT_APP_API_BASE_URL=/api
+      - REACT_APP_API_BASE_URL=https://api.dinhquoc.duckdns.org
     networks:
       - jobportal2-network
 
-  # 4. Nginx Container (Cổng 8086 duy nhất ra ngoài máy chủ)
+  # 4. Nginx Container (Hỗ trợ cả cổng chuẩn 80/443 và cổng phụ 8086/8446)
   jobportal2-nginx:
     container_name: quoc2_nginx-container
     image: nginx:latest
     ports:
+      - "80:80"
       - "8086:80"
+      - "443:443"
       - "8446:443"
     restart: always
     volumes:
