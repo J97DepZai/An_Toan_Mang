@@ -1,4 +1,4 @@
-export const API_BASE_URL = 'https://api.dinhquoc.duckdns.org';
+export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://api.dinhquoc.duckdns.org';
 export const ACCESS_TOKEN = 'accessToken';
 
 export const OAUTH2_REDIRECT_URI = 'http://localhost:3000/oauth2/redirect'
